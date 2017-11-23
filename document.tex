@@ -37,8 +37,8 @@
 	\section{Model konceptualny bazy danych}
 	\begin{figure}[!ht]	
 		\centering
-		\includegraphics[height=13cm]{model_konceptualny.jpg}
-		\caption{Model konceptuany}
+		\includegraphics[height=13cm]{modelKonceptualny.jpg}
+		\caption{Model konceptualny}
 		\label{fig:obrazek 0}
 	\end{figure}
 	\newpage
@@ -54,7 +54,7 @@
 	\subsection{Dane techniczne}
 		 Obsługa konta, bazy wideo i wypożyczeń powinna być dostępna przez aplikację desktopową połączoną z bazą danych.
 		Wypożyczający loguje się do konta za pomocą loginu i hasła. Hasło nie jest przechowywane w bazie danych (jest to jedynie zahaszowane hasło)
-	
+	\newpage
 	\section{Wymagania funkcjonalne i niefunkcjonale}
 	\subsection{Wymagania funkcjonalne}
 	\begin{itemize}
@@ -96,4 +96,45 @@
 		\caption{Diagram związków encji}
 		\label{fig:obrazek 2}
 	\end{figure}
+\newpage
+\section{Analiza ilości encji}
+\subsection{Analiza liczby instancji dla każdej encji}
+\begin{itemize}
+\item Film – ok. 50 rekordów (przykładowo)
+\item Specimen – ok. 50 rekordów (podobnie jak Film)
+\item Carrier (nośnik) – 5-10 rekordów ( Nie więcej jak Specimen)
+\item LocationType (typ lokacji) – 5-10 rekordów (nie więcej jak Location)
+\item Location (lokacja) – ok. 50 rekordów (nie więcej jak Specimen)
+\item Hire (wypożyczenie) – 10 na sam początek , nie więcej jak 3 * liczba użytkowników
+\item Inmate (domownik) – ok. 10 rekordów
+\item User (użytkownik) – ok.10 rekordów (tak samo jak Inmate)
+\item ProductionCompany (Wytwórnia filmów) – ok. 10-15 rekordów
+\item Person (osoba)– minimalnie ilość rekordów 1 per Film (przykładowo)
+\item Cast (obsada) – maksymalnie Person * Role * Film
+\item Role (rola w filmie) – ok. 10 rekordów (przykładowo)
+\item Contry (kraj) – maksymalnie ok. 240, minimalnie 1
+\item ProductionCountry (Kraj produkcji) – maksymalnie Contry * Film
+\item Genre (gatunek) – ok. 15 rekordów (przykładowo)
+\end{itemize}
+
+\subsection{Analiza użycia dla każdej encji}
+\begin{itemize}
+\item Film – wyszukiwanie najczęściej, potem dodawanie i edycja, prawie wcale usuwanie
+\item Specimen - wyszukiwanie najczęściej, potem dodawanie i edycja, prawie wcale usuwanie
+\item Carrier – wyszukiwanie najczęściej, rzadziej dodawanie (najwięcej rekordów na początku istnienia bazy), prawie wcale edycja, brak usuwania
+\item LocationType – wyszukiwanie najczęściej, potem dodawanie, brak usuwania i edycji
+\item Location – wyszukiwanie najczęściej, podobnie dodawanie, najmniej edycja, brak usuwania
+\item Hire – wyszukiwanie i dodawanie najczęściej, podobnie usuwanie, brak edycji
+\item Inmate – wyszukiwanie najczęściej, rzadziej dodawanie, brak edycji i usuwania
+\item User – wyszukiwanie najczęściej, rzadziej dodawanie i edycja, brak usuwania
+\item ProductionCompany – wyszukiwanie najczęściej, potem dodawanie, brak edycji i usuwania
+\item Person – wyszukiwanie najczęściej, potem dodawanie, brak edycji i usuwania
+\item Cast – najczęściej wyszukiwanie, potem dodawanie, brak edycji, rzadko usuwanie
+\item Role – najczęściej wyszukiwanie, rzadko dodawanie (najwięcej rekordów na początku istnienia bazy), brak edycji i usuwania
+\item Contry – najczęściej wyszukiwanie, rzadko dodawanie, (najwięcej rekordów na początku istnienia bazy) brak edycji i usuwania
+\item ProductionCountry  - najczęściej wyszukiwanie, potem dodawanie, rzadko edycja, brak usuwania
+\item Genre – najczęściej wyszukiwanie, rzadko dodawanie (najwięcej rekordów na początku istnienia bazy), brak usuwania i edycji
+
+\end{itemize}
+
 \end{document}
