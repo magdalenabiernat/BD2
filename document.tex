@@ -37,7 +37,7 @@
 	\section{Model konceptualny bazy danych}
 	\begin{figure}[!ht]	
 		\centering
-		\includegraphics[height=13cm]{modelKonceptualny.jpg}
+		\includegraphics[height=13cm]{model_konceptualny.png}
 		\caption{Model konceptualny}
 		\label{fig:obrazek 0}
 	\end{figure}
@@ -52,8 +52,9 @@
 	\subsection{Przepisy}
 		Liczba wypożyczonych jednocześnie egzemplarzy przez danego użytkownika nie może być większa niż trzy. Nie istnieje termin zwrotu - wypożyczenie jest bezterminowe. Nieaktywny użytkownik nie może się zalogować na konto i wypożyczyć/zwrócić filmu.
 	\subsection{Dane techniczne}
+	\label{dane_techniczne}
 		 Obsługa konta, bazy wideo i wypożyczeń powinna być dostępna przez aplikację desktopową połączoną z bazą danych.
-		Wypożyczający loguje się do konta za pomocą loginu i hasła. Hasło nie jest przechowywane w bazie danych (jest to jedynie zahaszowane hasło)
+		Wypożyczający loguje się do konta za pomocą loginu i hasła. Hasło nie jest przechowywane w bazie danych (jest to jedynie zahaszowane hasło).
 	\newpage
 	\section{Wymagania funkcjonalne i niefunkcjonale}
 	\subsection{Wymagania funkcjonalne}
@@ -131,10 +132,19 @@
 \item Person – wyszukiwanie najczęściej, potem dodawanie, brak edycji i usuwania
 \item Cast – najczęściej wyszukiwanie, potem dodawanie, brak edycji, rzadko usuwanie
 \item Role – najczęściej wyszukiwanie, rzadko dodawanie (najwięcej rekordów na początku istnienia bazy), brak edycji i usuwania
-\item Contry – najczęściej wyszukiwanie, rzadko dodawanie, (najwięcej rekordów na początku istnienia bazy) brak edycji i usuwania
+\item Country – najczęściej wyszukiwanie, rzadko dodawanie, (najwięcej rekordów na początku istnienia bazy) brak edycji i usuwania
 \item ProductionCountry  - najczęściej wyszukiwanie, potem dodawanie, rzadko edycja, brak usuwania
 \item Genre – najczęściej wyszukiwanie, rzadko dodawanie (najwięcej rekordów na początku istnienia bazy), brak usuwania i edycji
 
 \end{itemize}
-
+\section{Implementacja bazy danych}
+\subsection{Serwer bazodanowy}
+W związku z chęcią realizacji aplikacji na platformie .NET, zdecydowaliśmy się na wybór instancji bazodanowej dostarczonej przez firmę Microsoft, a mianowicie MS SQL Server w wersji 2014. Do jej zarządzania będziemy używać dostarczonego w pakiecie narzędzia - Management Studio, bądź też przeglądarki wbudowanej w środowisko programistyczne - Visual Studio 2015.
+\subsection{Tworzenie tabel i insertowanie danych}
+Tabele stworzono wg diagramów związków encji. Zawierają one przykładowe dane, niekoniecznie zgodne z rzeczywistością. Dla ułatwienia, tabeli zawierającej wypożyczenia, a także pola HashedPassword w tabeli Users nie wypełniono - będą one użyte, jak również wypełnione, podczas testów aplikacji w etapie III. Skrypt tabeli zamieszczony jest w załączniku.
+\section{Polityka bezpieczeństwa}
+\subsection{Zabezpieczenie serwera}
+W celu zwiększenia bezpieczeństwa, dostęp do instancji bazodanowej będzie chroniony, tzn. aby się z nią połączyć potrzebne będzie hasło. Na potrzebny budowania aplikacji i testów, instancja bazodanowa nie będzie posiadać hasła. 
+\subsection{Dostęp do kont użytkowników}
+Jak to zostało wspomniane w danych technicznych w punkcie \ref{dane_techniczne}, hasła użytkowników planujemy szyfrować. Myślimy o wykorzystaniu szyfrowania symetrycznego. Jako iż będziemy korzystać z platformy .NET, do naszych celów wykorzystamy gotową klasę CryptoStream biblioteki System.Security.Cryptography, która pozwoli nam przekształcać hasło, na niezrozumiały ciąg znaków. Wykorzystuje ona szyfrowanie \textit{AES} (ang. Advanced Encryption Standard). 
 \end{document}
