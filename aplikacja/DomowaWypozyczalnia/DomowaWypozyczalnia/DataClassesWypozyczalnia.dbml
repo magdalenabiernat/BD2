@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-FC3IJJV\SQLEXPRESS;Initial Catalog=BD;Integrated Security=True" SettingsObjectName="DomowaWypozyczalnia.Properties.Settings" SettingsPropertyName="BDConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Carrier" Member="Carriers">
+    <Type Name="Carrier">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Carrier_Specimen" Member="Specimens" ThisKey="Id" OtherKey="Carrier" Type="Specimen" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="VarChar(31) NOT NULL" CanBeNull="false" />
+      <Column Name="HashedPassword" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Inmate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Admin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Inmate_User" Member="Inmate1" ThisKey="Inmate" OtherKey="Id" Type="Inmate" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Cast" Member="Casts">
+    <Type Name="Cast">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Person" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Film" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Character" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Film_Cast" Member="Film1" ThisKey="Film" OtherKey="Id" Type="Film" IsForeignKey="true" />
+      <Association Name="Person_Cast" Member="Person1" ThisKey="Person" OtherKey="Id" Type="Person" IsForeignKey="true" />
+      <Association Name="Role_Cast" Member="Role1" ThisKey="Role" OtherKey="Id" Type="Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Country" Member="Countries">
+    <Type Name="Country">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Country_Person" Member="Persons" ThisKey="Id" OtherKey="Country" Type="Person" />
+      <Association Name="Country_ProductionCountry" Member="ProductionCountry" ThisKey="Id" OtherKey="Id" Type="ProductionCountry" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Film" Member="Films">
+    <Type Name="Film">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Genre" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProductionDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ProductionCompany" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Duration" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Film_Cast" Member="Casts" ThisKey="Id" OtherKey="Film" Type="Cast" />
+      <Association Name="Film_Specimen" Member="Specimens" ThisKey="Id" OtherKey="Film" Type="Specimen" />
+      <Association Name="Genre_Film" Member="Genre1" ThisKey="Genre" OtherKey="Id" Type="Genre" IsForeignKey="true" />
+      <Association Name="ProductionCompany_Film" Member="ProductionCompany1" ThisKey="ProductionCompany" OtherKey="Id" Type="ProductionCompany" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Genre" Member="Genres">
+    <Type Name="Genre">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Genre_Film" Member="Films" ThisKey="Id" OtherKey="Genre" Type="Film" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Hire" Member="Hires">
+    <Type Name="Hire">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Inmate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Specimen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Rentaldate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Returned" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Inmate_Hire" Member="Inmate1" ThisKey="Inmate" OtherKey="Id" Type="Inmate" IsForeignKey="true" />
+      <Association Name="Specimen_Hire" Member="Specimen1" ThisKey="Specimen" OtherKey="Id" Type="Specimen" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Inmate" Member="Inmates">
+    <Type Name="Inmate">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Inmate_User" Member="Users" ThisKey="Id" OtherKey="Inmate" Type="User" />
+      <Association Name="Inmate_Hire" Member="Hires" ThisKey="Id" OtherKey="Inmate" Type="Hire" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Location" Member="Locations">
+    <Type Name="Location">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Place" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LocationType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Location_Specimen" Member="Specimens" ThisKey="Id" OtherKey="Location" Type="Specimen" />
+      <Association Name="LocationType_Location" Member="LocationType1" ThisKey="LocationType" OtherKey="Id" Type="LocationType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LocationType" Member="LocationTypes">
+    <Type Name="LocationType">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="LocationType_Location" Member="Locations" ThisKey="Id" OtherKey="LocationType" Type="Location" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Person" Member="Persons">
+    <Type Name="Person">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Surname" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Person_Cast" Member="Casts" ThisKey="Id" OtherKey="Person" Type="Cast" />
+      <Association Name="Country_Person" Member="Country1" ThisKey="Country" OtherKey="Id" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductionCompany" Member="ProductionCompanies">
+    <Type Name="ProductionCompany">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="ProductionCompany_Film" Member="Films" ThisKey="Id" OtherKey="ProductionCompany" Type="Film" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductionCountry" Member="ProductionCountries">
+    <Type Name="ProductionCountry">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Film" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Country" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Country_ProductionCountry" Member="Country1" ThisKey="Id" OtherKey="Id" Type="Country" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Role" Member="Roles">
+    <Type Name="Role">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Role_Cast" Member="Casts" ThisKey="Id" OtherKey="Role" Type="Cast" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Specimen" Member="Specimens">
+    <Type Name="Specimen">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Film" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Carrier" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Location" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateAdded" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Specimen_Hire" Member="Hires" ThisKey="Id" OtherKey="Specimen" Type="Hire" />
+      <Association Name="Carrier_Specimen" Member="Carrier1" ThisKey="Carrier" OtherKey="Id" Type="Carrier" IsForeignKey="true" />
+      <Association Name="Film_Specimen" Member="Film1" ThisKey="Film" OtherKey="Id" Type="Film" IsForeignKey="true" />
+      <Association Name="Location_Specimen" Member="Location1" ThisKey="Location" OtherKey="Id" Type="Location" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
