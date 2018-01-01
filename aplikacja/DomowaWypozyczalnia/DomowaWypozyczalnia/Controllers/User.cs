@@ -4,19 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace DomowaWypozyczalnia
 {
     partial class User
     {
         public static Result ValidateUser(string username, string password)
         {
-            GetUser(username);
-            return Result.Ok;
+            User user = GetUser(username);
+            if (user == null)
+                return Result.InvalidInput;
+
+            if (user.HashedPassword == AesCryptography.EncryptString(password))
+                return Result.Ok;
+            else
+                return Result.InvalidPassword;
         }
 
-        private static void GetUser(string username)
+        public static User GetUser(string username)
         {
-            User user = Database.Current.Users.Where(u => u.Login == username).FirstOrDefault();
+            return Database.Current.Users.Where(u => u.Login == username).FirstOrDefault();
+        }
+
+        public static bool IsAdmin(string username)
+        {
+            return Database.Current.Users.Where(u => u.Login == username).FirstOrDefault().Admin;
         }
     }
 }
