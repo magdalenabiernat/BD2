@@ -33,18 +33,19 @@ namespace DomowaWypozyczalnia
             {
                 database.SubmitChanges();
             }
-            catch(ChangeConflictException)
+            catch (ChangeConflictException)
             {
                 result = Result.ResultConflict;
             }
-            catch(System.Data.SqlClient.SqlException)
+            catch (System.Data.SqlClient.SqlException)
             {
                 result = Result.ResultCannotBeDeleted;
             }
-            catch(Exception)
+            catch (Exception)
             {
                 result = Result.ResultDirtyContext;
             }
+
             return result;
         }
     }

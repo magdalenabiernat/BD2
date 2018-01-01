@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AesCryptography.cs" />
     <Compile Include="Database.cs" />
     <Compile Include="Controllers\User.cs" />
     <Compile Include="DataClassesWypozyczalnia.designer.cs">
