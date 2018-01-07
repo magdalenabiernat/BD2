@@ -20,6 +20,33 @@ namespace DomowaWypozyczalnia
             InitializeComponent();
             this.isAdmin = isAdmin;
             this.user = user;
+            SwitchPanel();
+            SetComponents();
+        }
+
+        private void SwitchPanel()
+        {
+            if (isAdmin)
+                panelAdmin.Visible = true;
+            else
+                panelUser.Visible = true;
+        }
+
+        private void SetComponents()
+        {
+            if(isAdmin)
+            {
+                labelAdmin.Text += user.Inmate1.Name + $" ({user.Login})";
+            }
+            else
+            {
+                labelUser.Text += user.Inmate1.Name + $" ({user.Login})";
+            }
+        }
+
+        private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

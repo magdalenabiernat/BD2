@@ -30,9 +30,15 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelAdmin = new System.Windows.Forms.Panel();
+            this.panelUser = new System.Windows.Forms.Panel();
+            this.labelUser = new System.Windows.Forms.Label();
+            this.labelAdmin = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            this.panelAdmin.SuspendLayout();
+            this.panelUser.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -54,17 +60,54 @@
             this.plikToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
             this.plikToolStripMenuItem.Text = "Plik";
             // 
+            // zamknijToolStripMenuItem
+            // 
+            this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.zamknijToolStripMenuItem.Text = "Zamknij";
+            this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
+            // 
             // pomocToolStripMenuItem
             // 
             this.pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
             this.pomocToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.pomocToolStripMenuItem.Text = "Pomoc";
             // 
-            // zamknijToolStripMenuItem
+            // panelAdmin
             // 
-            this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.zamknijToolStripMenuItem.Text = "Zamknij";
+            this.panelAdmin.Controls.Add(this.labelAdmin);
+            this.panelAdmin.Location = new System.Drawing.Point(12, 27);
+            this.panelAdmin.Name = "panelAdmin";
+            this.panelAdmin.Size = new System.Drawing.Size(641, 381);
+            this.panelAdmin.TabIndex = 1;
+            this.panelAdmin.Visible = false;
+            // 
+            // panelUser
+            // 
+            this.panelUser.Controls.Add(this.labelUser);
+            this.panelUser.Location = new System.Drawing.Point(12, 27);
+            this.panelUser.Name = "panelUser";
+            this.panelUser.Size = new System.Drawing.Size(641, 381);
+            this.panelUser.TabIndex = 2;
+            this.panelUser.Visible = false;
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Location = new System.Drawing.Point(13, 12);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(68, 13);
+            this.labelUser.TabIndex = 0;
+            this.labelUser.Text = "Użytkownik: ";
+            // 
+            // labelAdmin
+            // 
+            this.labelAdmin.AutoSize = true;
+            this.labelAdmin.Location = new System.Drawing.Point(13, 12);
+            this.labelAdmin.Name = "labelAdmin";
+            this.labelAdmin.Size = new System.Drawing.Size(73, 13);
+            this.labelAdmin.TabIndex = 0;
+            this.labelAdmin.Text = "Administrator: ";
             // 
             // MainForm
             // 
@@ -72,11 +115,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 420);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panelUser);
+            this.Controls.Add(this.panelAdmin);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Domowa Wypożyczalnia";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panelAdmin.ResumeLayout(false);
+            this.panelAdmin.PerformLayout();
+            this.panelUser.ResumeLayout(false);
+            this.panelUser.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,5 +137,9 @@
         private System.Windows.Forms.ToolStripMenuItem plikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pomocToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zamknijToolStripMenuItem;
+        private System.Windows.Forms.Panel panelAdmin;
+        private System.Windows.Forms.Panel panelUser;
+        private System.Windows.Forms.Label labelAdmin;
+        private System.Windows.Forms.Label labelUser;
     }
 }
