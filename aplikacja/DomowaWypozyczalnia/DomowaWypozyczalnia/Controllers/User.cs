@@ -30,5 +30,14 @@ namespace DomowaWypozyczalnia
         {
             return Database.Current.Users.Where(u => u.Login == username).FirstOrDefault().Admin;
         }
+
+        public static void InsertUser(User user)
+        {
+            if (user != null)
+            {
+                Database.Current.Users.InsertOnSubmit(user);
+                Database.Submit();
+            }     
+        }
     }
 }

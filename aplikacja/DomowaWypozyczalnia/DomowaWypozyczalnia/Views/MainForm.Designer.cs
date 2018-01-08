@@ -33,9 +33,9 @@
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAdmin = new System.Windows.Forms.Panel();
+            this.labelAdmin = new System.Windows.Forms.Label();
             this.panelUser = new System.Windows.Forms.Panel();
             this.labelUser = new System.Windows.Forms.Label();
-            this.labelAdmin = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panelAdmin.SuspendLayout();
             this.panelUser.SuspendLayout();
@@ -82,6 +82,15 @@
             this.panelAdmin.TabIndex = 1;
             this.panelAdmin.Visible = false;
             // 
+            // labelAdmin
+            // 
+            this.labelAdmin.AutoSize = true;
+            this.labelAdmin.Location = new System.Drawing.Point(13, 12);
+            this.labelAdmin.Name = "labelAdmin";
+            this.labelAdmin.Size = new System.Drawing.Size(73, 13);
+            this.labelAdmin.TabIndex = 0;
+            this.labelAdmin.Text = "Administrator: ";
+            // 
             // panelUser
             // 
             this.panelUser.Controls.Add(this.labelUser);
@@ -99,15 +108,6 @@
             this.labelUser.Size = new System.Drawing.Size(68, 13);
             this.labelUser.TabIndex = 0;
             this.labelUser.Text = "Użytkownik: ";
-            // 
-            // labelAdmin
-            // 
-            this.labelAdmin.AutoSize = true;
-            this.labelAdmin.Location = new System.Drawing.Point(13, 12);
-            this.labelAdmin.Name = "labelAdmin";
-            this.labelAdmin.Size = new System.Drawing.Size(73, 13);
-            this.labelAdmin.TabIndex = 0;
-            this.labelAdmin.Text = "Administrator: ";
             // 
             // MainForm
             // 

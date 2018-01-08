@@ -21,7 +21,6 @@ namespace DomowaWypozyczalnia
             this.isAdmin = isAdmin;
             this.user = user;
             SwitchPanel();
-            SetComponents();
         }
 
         private void SwitchPanel()
@@ -29,19 +28,7 @@ namespace DomowaWypozyczalnia
             if (isAdmin)
                 panelAdmin.Visible = true;
             else
-                panelUser.Visible = true;
-        }
-
-        private void SetComponents()
-        {
-            if(isAdmin)
-            {
-                labelAdmin.Text += user.Inmate1.Name + $" ({user.Login})";
-            }
-            else
-            {
-                labelUser.Text += user.Inmate1.Name + $" ({user.Login})";
-            }
+                panelUser.Visible = true;    
         }
 
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)

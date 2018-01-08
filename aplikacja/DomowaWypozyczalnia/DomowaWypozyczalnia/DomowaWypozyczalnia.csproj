@@ -47,36 +47,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AesCryptography.cs" />
-    <Compile Include="Database.cs" />
+    <Compile Include="Controllers\AesCryptography.cs" />
+    <Compile Include="Views\AddCountry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\AddCountry.Designer.cs">
+      <DependentUpon>AddCountry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\Country.cs" />
+    <Compile Include="Controllers\Database.cs" />
     <Compile Include="Controllers\User.cs" />
-    <Compile Include="DataClassesWypozyczalnia.designer.cs">
+    <Compile Include="Model\DataClassesWypozyczalnia.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClassesWypozyczalnia.dbml</DependentUpon>
     </Compile>
-    <Compile Include="FormSingIn.cs">
+    <Compile Include="Views\AddSingleProperty.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSingIn.Designer.cs">
+    <Compile Include="Views\AddSingleProperty.Designer.cs">
+      <DependentUpon>AddSingleProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormSingIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormSingIn.Designer.cs">
       <DependentUpon>FormSingIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Views\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Result.cs" />
-    <None Include="DataClassesWypozyczalnia.dbml.layout">
+    <Compile Include="Model\Result.cs" />
+    <None Include="Model\DataClassesWypozyczalnia.dbml.layout">
       <DependentUpon>DataClassesWypozyczalnia.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="FormSingIn.resx">
+    <EmbeddedResource Include="Views\AddCountry.resx">
+      <DependentUpon>AddCountry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AddSingleProperty.resx">
+      <DependentUpon>AddSingleProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormSingIn.resx">
       <DependentUpon>FormSingIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -88,7 +107,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DataClassesWypozyczalnia.dbml">
+    <None Include="Model\DataClassesWypozyczalnia.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataClassesWypozyczalnia.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>

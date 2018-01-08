@@ -8,51 +8,45 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DomowaWypozyczalnia.Controllers
-{
-    public partial class AddCountry : Form
-    {
-        Country country = null;
 
-        public AddCountry(Country country = null)
+namespace DomowaWypozyczalnia
+{
+    public partial class AddCountry : AddSingleProperty
+    {
+        static Country country = null;
+
+        public AddCountry() : base("Dodaj nowe państwo", AddOrEditCountry)
+        {           
+        }
+
+        public AddCountry(Country country) : base("Edytuj państwo " + country.Name, AddOrEditCountry, country)
         {
-            InitializeComponent();
-            this.country = country;
+            setComponents();
         }
 
         private void setComponents()
         {
             if(country != null)
             {
-                this.Name = "Edytuj państwo";
-                textBoxCountry.Text = country.Name;
+                textBoxName.Text = country.Name;
             }
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        static Tuple<Result, string> AddOrEditCountry(TextBox t, Object o)
         {
-            var result = AddOrEditCountry();
-            if (result.Item1 == Result.Ok)
-                Close();
-            else
-                MessageBox.Show(result.Item2);
-        }
-
-        private Tuple<Result,string> AddOrEditCountry()
-        {
-            if (!string.IsNullOrWhiteSpace(textBoxCountry.Text))
+            if (!string.IsNullOrWhiteSpace(t.Text))
             {
-                List<Country> countries = Country.GetAllWithName(textBoxCountry.Text);
-                if (country == null)
+                List<Country> countries = Country.GetAllWithName(t.Text);
+                if (o == null)
                 {
                     if (countries == null || countries.Count == 0)
                     {
                         Country c = new Country();
-                        c.Name = textBoxCountry.Text;
+                        c.Name = t.Text;
                         Database.Current.Countries.InsertOnSubmit(c);
                         Database.Submit();
 
-                        return Tuple.Create(Result.Ok,"");
+                        return Tuple.Create(Result.Ok, "");
                     }
                     else
                     {
@@ -63,10 +57,10 @@ namespace DomowaWypozyczalnia.Controllers
                 {
                     if (countries == null || countries.Count == 0)
                     {
-                        country.Name = textBoxCountry.Text;
+                        ((Country)o).Name = t.Text;
                         Database.Submit();
 
-                        return Tuple.Create(Result.Ok,"");
+                        return Tuple.Create(Result.Ok, "");
                     }
                     else
                     {

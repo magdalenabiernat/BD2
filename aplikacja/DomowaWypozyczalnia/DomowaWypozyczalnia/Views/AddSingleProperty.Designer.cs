@@ -1,6 +1,6 @@
-﻿namespace DomowaWypozyczalnia.Controllers
+﻿namespace DomowaWypozyczalnia
 {
-    partial class AddCountry
+    partial class AddSingleProperty
     {
         /// <summary>
         /// Required designer variable.
@@ -28,47 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.textBoxCountry = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
+            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(260, 27);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 0;
-            this.buttonAdd.Text = "Dodaj";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // textBoxCountry
-            // 
-            this.textBoxCountry.Location = new System.Drawing.Point(70, 28);
-            this.textBoxCountry.Name = "textBoxCountry";
-            this.textBoxCountry.Size = new System.Drawing.Size(184, 20);
-            this.textBoxCountry.TabIndex = 1;
             // 
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(24, 31);
+            this.labelName.Location = new System.Drawing.Point(24, 30);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(40, 13);
-            this.labelName.TabIndex = 2;
+            this.labelName.TabIndex = 5;
             this.labelName.Text = "Nazwa";
             // 
-            // AddCountry
+            // textBoxName
+            // 
+            this.textBoxName.Location = new System.Drawing.Point(70, 27);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(184, 20);
+            this.textBoxName.TabIndex = 4;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.Location = new System.Drawing.Point(260, 26);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.TabIndex = 3;
+            this.buttonAdd.Text = "Dodaj";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // AddSingleProperty
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 75);
             this.Controls.Add(this.labelName);
-            this.Controls.Add(this.textBoxCountry);
+            this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.buttonAdd);
-            this.Name = "AddCountry";
-            this.Text = "Dodaj państwo";
+            this.Name = "AddSingleProperty";
+            this.Text = "AddSingleProperty";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -76,8 +76,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.TextBox textBoxCountry;
         private System.Windows.Forms.Label labelName;
+        protected System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }
