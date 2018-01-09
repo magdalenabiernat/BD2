@@ -12,10 +12,12 @@ namespace DomowaWypozyczalnia
 {
     public partial class AddGenre : AddSingleProperty
     {
-        public AddGenre() : base("Dodaj nowy gatunek", AddOrEditGenre)
+        public AddGenre() 
+            : base("Dodaj nowy gatunek", AddOrEditGenre)
         { }
 
-        public AddGenre(Genre genre) : base("Edytuj gatunek " + genre.Name, AddOrEditGenre, genre)
+        public AddGenre(Genre genre) 
+            : base("Edytuj gatunek " + genre.Name, AddOrEditGenre, genre)
         {
             SetComponents(genre.Name);
         }

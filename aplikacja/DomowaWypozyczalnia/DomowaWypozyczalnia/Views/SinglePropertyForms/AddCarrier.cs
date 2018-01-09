@@ -12,10 +12,12 @@ namespace DomowaWypozyczalnia
 {
     public partial class AddCarrier : AddSingleProperty
     {
-        public AddCarrier() : base("Dodaj nowy nośnik", AddOrEditCarrier)
+        public AddCarrier() 
+            : base("Dodaj nowy nośnik", AddOrEditCarrier)
         { }
 
-        public AddCarrier(Carrier carrier) : base("Edytuj nośnik " + carrier.Name, AddOrEditCarrier, carrier)
+        public AddCarrier(Carrier carrier) 
+            : base("Edytuj nośnik " + carrier.Name, AddOrEditCarrier, carrier)
         {
             SetComponents(carrier.Name);
         }

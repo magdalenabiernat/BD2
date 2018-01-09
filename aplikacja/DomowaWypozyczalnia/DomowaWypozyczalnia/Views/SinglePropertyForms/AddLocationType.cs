@@ -12,10 +12,12 @@ namespace DomowaWypozyczalnia
 {
     public partial class AddLocationType : AddSingleProperty
     {
-        public AddLocationType() : base("Dodaj nowy typ lokalizacji", AddOrEditLocationType)
+        public AddLocationType()
+            : base("Dodaj nowy typ lokalizacji", AddOrEditLocationType)
         { }
 
-        public AddLocationType(LocationType type) : base("Edytuj typ " + type.Name, AddOrEditLocationType, type)
+        public AddLocationType(LocationType type)
+            : base("Edytuj typ " + type.Name, AddOrEditLocationType, type)
         {
             SetComponents(type.Name);
         }

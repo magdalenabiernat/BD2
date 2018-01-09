@@ -13,10 +13,12 @@ namespace DomowaWypozyczalnia
 {
     public partial class AddCountry : AddSingleProperty
     {
-        public AddCountry() : base("Dodaj nowe państwo", AddOrEditCountry)
+        public AddCountry() 
+            : base("Dodaj nowe państwo", AddOrEditCountry)
         { }
 
-        public AddCountry(Country country) : base("Edytuj państwo " + country.Name, AddOrEditCountry, country)
+        public AddCountry(Country country) 
+            : base("Edytuj państwo " + country.Name, AddOrEditCountry, country)
         {
             SetComponents(country.Name);
         }

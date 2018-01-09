@@ -22,7 +22,8 @@ namespace DomowaWypozyczalnia
         public AddSingleProperty(string name, MyDelegate function, object o)
         {
             InitializeComponent();
-            Name = name;
+            Text = name;
+            buttonAdd.Text = "Edytuj";
             myDelegate += function;
             obj = o;
         }
@@ -30,7 +31,7 @@ namespace DomowaWypozyczalnia
         public AddSingleProperty(string name, MyDelegate function)
         {
             InitializeComponent();
-            Name = name;
+            Text = name;
             myDelegate += function;
         }
 

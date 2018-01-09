@@ -12,10 +12,12 @@ namespace DomowaWypozyczalnia
 {
     public partial class AddInmate : AddSingleProperty
     {
-        public AddInmate() : base("Dodaj nowego lokatora", AddOrEditInmate)
+        public AddInmate() 
+            : base("Dodaj nowego lokatora", AddOrEditInmate)
         { }
 
-        public AddInmate(Inmate inmate) : base("Edytuj lokatora " + inmate.Name, AddOrEditInmate, inmate)
+        public AddInmate(Inmate inmate) 
+            : base("Edytuj lokatora " + inmate.Name, AddOrEditInmate, inmate)
         {
             SetComponents(inmate.Name);
         }
