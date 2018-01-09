@@ -10,38 +10,38 @@ using System.Windows.Forms;
 
 namespace DomowaWypozyczalnia
 {
-    public partial class AddProductionCompany : AddSingleProperty
+    public partial class AddRole : AddSingleProperty
     {
-        public AddProductionCompany() 
-            : base("Dodaj wytwórnię filmową",AddOrEditProductionCompany)
+        public AddRole() 
+            : base("Dodaj nową rolę", AddOrEditRole)
         { }
 
-        public AddProductionCompany(ProductionCompany company)
-            : base("Edytuj wytwórnię " + company.Name, AddOrEditProductionCompany, company)
+        public AddRole(Role role)
+            : base("Edytuj rolę " + role.Name, AddOrEditRole, role)
         {
-            SetComponents(company.Name);
+            SetComponents(role.Name);
         }
 
-         static Result AddOrEditProductionCompany(TextBox textBox, object obj)
+        static Result AddOrEditRole(TextBox textBox, object obj)
         {
             if (!string.IsNullOrWhiteSpace(textBox.Text))
             {
-                List<ProductionCompany> companies = ProductionCompany.GetAllWithName(textBox.Text);
+                List<Role> roles = Role.GetAllWithName(textBox.Text);
                 if(obj == null)
                 {
-                    if (companies == null || companies.Count == 0)
+                    if (roles == null || roles.Count == 0)
                     {
-                        ProductionCompany.InsertCompany(textBox.Text);
+                        Role.InsertRole(textBox.Text);
                         return Result.Ok;
                     }
                     else
                         return Result.DuplicatedValue;
-                } 
+                }
                 else
                 {
-                    if (companies == null || companies.Count == 0)
+                    if (roles == null || roles.Count == 0)
                     {
-                        ((ProductionCompany)obj).Name = textBox.Text;
+                        ((Role)obj).Name = textBox.Text;
                         Database.Submit();
                         return Result.Ok;
                     }

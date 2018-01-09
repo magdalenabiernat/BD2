@@ -47,12 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AesCryptography.cs" />
+    <Compile Include="Controllers\Cryptography\AesCryptography.cs" />
     <Compile Include="Controllers\Carrier.cs" />
     <Compile Include="Controllers\Genre.cs" />
     <Compile Include="Controllers\Inmate.cs" />
     <Compile Include="Controllers\LocationType.cs" />
     <Compile Include="Controllers\ProductionCompany.cs" />
+    <Compile Include="Controllers\Role.cs" />
     <Compile Include="Views\SinglePropertyForms\AddCountry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +91,12 @@
     </Compile>
     <Compile Include="Views\SinglePropertyForms\AddProductionCompany.Designer.cs">
       <DependentUpon>AddProductionCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SinglePropertyForms\AddRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SinglePropertyForms\AddRole.Designer.cs">
+      <DependentUpon>AddRole.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SinglePropertyForms\AddSingleProperty.cs">
       <SubType>Form</SubType>
