@@ -10,7 +10,9 @@ namespace DomowaWypozyczalnia
     {
         internal static List<Carrier> GetAllWithName(string name)
         {
-            return Database.Current.Carriers.Where(c => c.Name.ToLower() == name.ToLower()).ToList();
+            return Database.Current.Carriers
+                .Where(c => c.Name.ToLower() == name.ToLower())
+                .ToList();
         }
 
         internal static void InsertCarrier(string name)

@@ -51,6 +51,7 @@
     <Compile Include="Controllers\Carrier.cs" />
     <Compile Include="Controllers\Genre.cs" />
     <Compile Include="Controllers\Inmate.cs" />
+    <Compile Include="Controllers\LocationType.cs" />
     <Compile Include="Views\SinglePropertyForms\AddCountry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,6 +77,12 @@
     </Compile>
     <Compile Include="Views\SinglePropertyForms\AddInmate.Designer.cs">
       <DependentUpon>AddInmate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SinglePropertyForms\AddLocationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SinglePropertyForms\AddLocationType.Designer.cs">
+      <DependentUpon>AddLocationType.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SinglePropertyForms\AddSingleProperty.cs">
       <SubType>Form</SubType>

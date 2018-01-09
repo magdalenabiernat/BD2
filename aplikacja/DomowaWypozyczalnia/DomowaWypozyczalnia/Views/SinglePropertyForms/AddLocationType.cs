@@ -8,29 +8,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace DomowaWypozyczalnia
 {
-    public partial class AddCountry : AddSingleProperty
+    public partial class AddLocationType : AddSingleProperty
     {
-        public AddCountry() : base("Dodaj nowe państwo", AddOrEditCountry)
+        public AddLocationType() : base("Dodaj nowy typ lokalizacji", AddOrEditLocationType)
         { }
 
-        public AddCountry(Country country) : base("Edytuj państwo " + country.Name, AddOrEditCountry, country)
+        public AddLocationType(LocationType type) : base("Edytuj typ " + type.Name, AddOrEditLocationType, type)
         {
-            SetComponents(country.Name);
+            SetComponents(type.Name);
         }
 
-        static Result AddOrEditCountry(TextBox textBox, object obj)
+        static Result AddOrEditLocationType(TextBox textBox, object obj)
         {
-            if (!string.IsNullOrWhiteSpace(textBox.Text))
+            if(!string.IsNullOrWhiteSpace(textBox.Text))
             {
-                List<Country> countries = Country.GetAllWithName(textBox.Text);
-                if (obj == null)
+                List<LocationType> types = LocationType.GetAllWithName(textBox.Text);
+                if(obj == null)
                 {
-                    if (countries == null || countries.Count == 0)
+                    if (types == null || types.Count == 0)
                     {
-                        Country.InsertCountry(textBox.Text);
+                        LocationType.InsertLocationType(textBox.Text);
                         return Result.Ok;
                     }
                     else
@@ -38,9 +37,9 @@ namespace DomowaWypozyczalnia
                 }
                 else
                 {
-                    if (countries == null || countries.Count == 0)
+                    if (types == null || types.Count == 0)
                     {
-                        ((Country)obj).Name = textBox.Text;
+                        ((LocationType)obj).Name = textBox.Text;
                         Database.Submit();
                         return Result.Ok;
                     }

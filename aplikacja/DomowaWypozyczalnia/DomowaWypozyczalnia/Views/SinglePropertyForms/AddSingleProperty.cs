@@ -12,17 +12,10 @@ namespace DomowaWypozyczalnia
 {
     public partial class AddSingleProperty : Form
     {
-        public delegate Tuple<Result, string> MyDelegate(TextBox t, object o);
+        public delegate Result MyDelegate(TextBox t, object o);
 
         private MyDelegate myDelegate;
         protected object obj = null;
-        public static Tuple<Result, string> EverythingOk
-        {
-            get
-            {
-                return Tuple.Create(Result.Ok, "");
-            }
-        }
 
         private AddSingleProperty() { }
 
@@ -52,10 +45,21 @@ namespace DomowaWypozyczalnia
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             var result = myDelegate.Invoke(textBoxName, obj);
-            if (result.Item1 == Result.Ok)
-                Close();
-            else
-                MessageBox.Show(result.Item2);
+            switch(result)
+            {
+                case Result.Ok:
+                    Close();
+                    break;
+                case Result.EmptyImput:
+                    MessageBox.Show("Nie wypełniłeś pola Nazwa. Nie można wykonać operacji");
+                    break;
+                case Result.UnchangedValue:
+                    MessageBox.Show("Wprowadzona Nazwa istnieje lub nie została wyedytowana. Nie można wykonać operacji.");
+                    break;
+                case Result.DuplicatedValue:
+                    MessageBox.Show("Wprowadzona Nazwa już istnieje. Nie można wykonać operacji");
+                    break;
+            }                
         }
     }
 }

@@ -20,7 +20,7 @@ namespace DomowaWypozyczalnia
             SetComponents(inmate.Name);
         }
 
-        static Tuple<Result, string> AddOrEditInmate(TextBox textBox, object obj)
+        static Result AddOrEditInmate(TextBox textBox, object obj)
         {
             if (!string.IsNullOrWhiteSpace(textBox.Text))
             {
@@ -30,33 +30,25 @@ namespace DomowaWypozyczalnia
                     if (inmates == null || inmates.Count == 0)
                     {
                         Inmate.InsertInmate(textBox.Text);
-
-                        return EverythingOk;
+                        return Result.Ok;
                     }
                     else
-                    {
-                        return Tuple.Create(Result.InvalidInput, "Wprowadzony lokator istnieje. Nie można wykonać operacji.");
-                    }
+                        return Result.DuplicatedValue;
                 }
                 else
                 {
                     if (inmates == null || inmates.Count == 0)
                     {
-                        ((Inmate)obj).Name = textBox.Text;
+                        ((Inmate) obj).Name = textBox.Text;
                         Database.Submit();
-
-                        return EverythingOk;
+                        return Result.Ok;
                     }
                     else
-                    {
-                        return Tuple.Create(Result.InvalidInput, "Wprowadzony lokator istnieje bądź nie został wyedytowany. Nie można wykonać operacji.");
-                    }
+                        return Result.UnchangedValue;
                 }
             }
             else
-            {
-                return Tuple.Create(Result.InvalidInput, "Nie wypełniłeś pola Nazwa. Nie można wykonać operacji");
-            }
+                return Result.EmptyImput;
         }
     }
 }

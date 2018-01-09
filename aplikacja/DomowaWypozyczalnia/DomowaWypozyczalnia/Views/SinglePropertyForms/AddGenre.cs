@@ -20,7 +20,7 @@ namespace DomowaWypozyczalnia
             SetComponents(genre.Name);
         }
 
-        static Tuple<Result, string> AddOrEditGenre(TextBox textBox, object obj)
+        static Result AddOrEditGenre(TextBox textBox, object obj)
         {
             if(!string.IsNullOrWhiteSpace(textBox.Text))
             {
@@ -30,33 +30,25 @@ namespace DomowaWypozyczalnia
                     if(genres == null || genres.Count == 0)
                     {
                         Genre.InsertGenre(textBox.Text);
-
-                        return EverythingOk;
+                        return Result.Ok;
                     }
                     else
-                    {
-                        return Tuple.Create(Result.InvalidInput, "Wprowadzony gatunek istnieje. Nie można wykonać operacji.");
-                    }
+                        return Result.DuplicatedValue;
                 }
                 else
                 {
                     if (genres == null || genres.Count == 0)
                     {
-                        ((Genre)obj).Name = textBox.Text;
+                        ((Genre) obj).Name = textBox.Text;
                         Database.Submit();
-
-                        return EverythingOk;
+                        return Result.Ok;
                     }
                     else
-                    {
-                        return Tuple.Create(Result.InvalidInput, "Wprowadzony gatunek istnieje bądź nie został wyedytowany. Nie można wykonać operacji.");
-                    }
+                        return Result.UnchangedValue;
                 }
             }
             else
-            {
-                return Tuple.Create(Result.InvalidInput, "Nie wypełniłeś pola Nazwa. Nie można wykonać operacji");
-            }
+                return Result.EmptyImput;
         }
     }
 }

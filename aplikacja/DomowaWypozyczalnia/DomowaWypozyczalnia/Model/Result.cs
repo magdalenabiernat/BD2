@@ -8,6 +8,8 @@ namespace DomowaWypozyczalnia
 {
     public enum Result
     {
-        Ok, InvalidInput, InvalidPassword, ResultConflict, ResultCannotBeDeleted, ResultDirtyContext
+        Ok, EmptyImput, InvalidInput, InvalidPassword,
+        ResultConflict, ResultCannotBeDeleted, ResultDirtyContext,
+        DuplicatedValue, UnchangedValue
     }
 }
