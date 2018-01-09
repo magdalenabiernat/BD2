@@ -10,12 +10,21 @@ using System.Windows.Forms;
 
 namespace DomowaWypozyczalnia
 {
-    public abstract partial class AddSingleProperty : Form
+    public partial class AddSingleProperty : Form
     {
         public delegate Tuple<Result, string> MyDelegate(TextBox t, object o);
 
         private MyDelegate myDelegate;
-        private object obj = null;
+        protected object obj = null;
+        public static Tuple<Result, string> EverythingOk
+        {
+            get
+            {
+                return Tuple.Create(Result.Ok, "");
+            }
+        }
+
+        private AddSingleProperty() { }
 
         public AddSingleProperty(string name, MyDelegate function, object o)
         {
@@ -30,6 +39,14 @@ namespace DomowaWypozyczalnia
             InitializeComponent();
             Name = name;
             myDelegate += function;
+        }
+
+        protected void SetComponents(string text)
+        {
+            if (obj != null)
+            {
+                textBoxName.Text = text;
+            }
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)

@@ -48,10 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\AesCryptography.cs" />
-    <Compile Include="Views\AddCountry.cs">
+    <Compile Include="Controllers\Carrier.cs" />
+    <Compile Include="Controllers\Genre.cs" />
+    <Compile Include="Controllers\Inmate.cs" />
+    <Compile Include="Views\SinglePropertyForms\AddCountry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AddCountry.Designer.cs">
+    <Compile Include="Views\SinglePropertyForms\AddCountry.Designer.cs">
       <DependentUpon>AddCountry.cs</DependentUpon>
     </Compile>
     <Compile Include="Controllers\Country.cs" />
@@ -62,10 +65,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataClassesWypozyczalnia.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Views\AddSingleProperty.cs">
+    <Compile Include="Views\SinglePropertyForms\AddGenre.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AddSingleProperty.Designer.cs">
+    <Compile Include="Views\SinglePropertyForms\AddGenre.Designer.cs">
+      <DependentUpon>AddGenre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SinglePropertyForms\AddInmate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SinglePropertyForms\AddInmate.Designer.cs">
+      <DependentUpon>AddInmate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SinglePropertyForms\AddSingleProperty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SinglePropertyForms\AddSingleProperty.Designer.cs">
       <DependentUpon>AddSingleProperty.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FormSingIn.cs">
@@ -83,13 +98,19 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Result.cs" />
+    <Compile Include="Views\SinglePropertyForms\AddCarrier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SinglePropertyForms\AddCarrier.Designer.cs">
+      <DependentUpon>AddCarrier.cs</DependentUpon>
+    </Compile>
     <None Include="Model\DataClassesWypozyczalnia.dbml.layout">
       <DependentUpon>DataClassesWypozyczalnia.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="Views\AddCountry.resx">
+    <EmbeddedResource Include="Views\SinglePropertyForms\AddCountry.resx">
       <DependentUpon>AddCountry.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\AddSingleProperty.resx">
+    <EmbeddedResource Include="Views\SinglePropertyForms\AddSingleProperty.resx">
       <DependentUpon>AddSingleProperty.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FormSingIn.resx">

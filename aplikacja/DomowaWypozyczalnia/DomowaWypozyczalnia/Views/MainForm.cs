@@ -35,5 +35,11 @@ namespace DomowaWypozyczalnia
         {
             Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddGenre ag = new AddGenre();
+            ag.Show();
+        }
     }
 }

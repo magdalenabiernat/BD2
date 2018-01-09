@@ -36,6 +36,7 @@
             this.labelAdmin = new System.Windows.Forms.Label();
             this.panelUser = new System.Windows.Forms.Panel();
             this.labelUser = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelAdmin.SuspendLayout();
             this.panelUser.SuspendLayout();
@@ -63,7 +64,7 @@
             // zamknijToolStripMenuItem
             // 
             this.zamknijToolStripMenuItem.Name = "zamknijToolStripMenuItem";
-            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.zamknijToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.zamknijToolStripMenuItem.Text = "Zamknij";
             this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
             // 
@@ -75,6 +76,7 @@
             // 
             // panelAdmin
             // 
+            this.panelAdmin.Controls.Add(this.button1);
             this.panelAdmin.Controls.Add(this.labelAdmin);
             this.panelAdmin.Location = new System.Drawing.Point(12, 27);
             this.panelAdmin.Name = "panelAdmin";
@@ -109,14 +111,24 @@
             this.labelUser.TabIndex = 0;
             this.labelUser.Text = "Użytkownik: ";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(16, 48);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 420);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.panelUser);
             this.Controls.Add(this.panelAdmin);
+            this.Controls.Add(this.panelUser);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Domowa Wypożyczalnia";
@@ -141,5 +153,6 @@
         private System.Windows.Forms.Panel panelUser;
         private System.Windows.Forms.Label labelAdmin;
         private System.Windows.Forms.Label labelUser;
+        private System.Windows.Forms.Button button1;
     }
 }

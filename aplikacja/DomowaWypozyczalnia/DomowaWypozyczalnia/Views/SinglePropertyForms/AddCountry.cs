@@ -13,40 +13,26 @@ namespace DomowaWypozyczalnia
 {
     public partial class AddCountry : AddSingleProperty
     {
-        static Country country = null;
-
         public AddCountry() : base("Dodaj nowe państwo", AddOrEditCountry)
-        {           
-        }
+        { }
 
         public AddCountry(Country country) : base("Edytuj państwo " + country.Name, AddOrEditCountry, country)
         {
-            setComponents();
+            SetComponents(country.Name);
         }
 
-        private void setComponents()
+        static Tuple<Result, string> AddOrEditCountry(TextBox textBox, object obj)
         {
-            if(country != null)
+            if (!string.IsNullOrWhiteSpace(textBox.Text))
             {
-                textBoxName.Text = country.Name;
-            }
-        }
-
-        static Tuple<Result, string> AddOrEditCountry(TextBox t, Object o)
-        {
-            if (!string.IsNullOrWhiteSpace(t.Text))
-            {
-                List<Country> countries = Country.GetAllWithName(t.Text);
-                if (o == null)
+                List<Country> countries = Country.GetAllWithName(textBox.Text);
+                if (obj == null)
                 {
                     if (countries == null || countries.Count == 0)
                     {
-                        Country c = new Country();
-                        c.Name = t.Text;
-                        Database.Current.Countries.InsertOnSubmit(c);
-                        Database.Submit();
+                        Country.InsertCountry(textBox.Text);
 
-                        return Tuple.Create(Result.Ok, "");
+                        return EverythingOk;
                     }
                     else
                     {
@@ -57,10 +43,10 @@ namespace DomowaWypozyczalnia
                 {
                     if (countries == null || countries.Count == 0)
                     {
-                        ((Country)o).Name = t.Text;
+                        ((Country) obj).Name = textBox.Text;
                         Database.Submit();
 
-                        return Tuple.Create(Result.Ok, "");
+                        return EverythingOk;
                     }
                     else
                     {
