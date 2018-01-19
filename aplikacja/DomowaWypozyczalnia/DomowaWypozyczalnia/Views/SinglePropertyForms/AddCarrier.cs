@@ -12,6 +12,7 @@ namespace DomowaWypozyczalnia
 {
     public partial class AddCarrier : AddSingleProperty
     {
+        List<Carrier> carriers;
         public AddCarrier() 
             : base("Dodaj nowy nośnik", AddOrEditCarrier)
         { }
@@ -51,6 +52,21 @@ namespace DomowaWypozyczalnia
             }
             else
                 return Result.EmptyImput;
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            Carrier.InsertCarrier(comboBoxCarrier.Text);
+        }
+
+        private void buttonEdit_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void AddCarrier_Load(object sender, EventArgs e)
+        {
+            carriers = Carrier.GetAllWithName(comboBoxCarrier.Text);
         }
     }
 }

@@ -43,5 +43,13 @@ namespace DomowaWypozyczalnia
                 }
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Carrier ca=new Carrier();
+            AddCarrier c=new AddCarrier(ca);
+            c.ShowDialog();
+           
+        }
     }
 }

@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace DomowaWypozyczalnia
 {
+   
     public partial class AddCountry : AddSingleProperty
     {
+        List<Carrier> carriers;
         public AddCountry() 
             : base("Dodaj nowe państwo", AddOrEditCountry)
         { }
@@ -52,6 +54,11 @@ namespace DomowaWypozyczalnia
             }
             else
                 return Result.EmptyImput;
+        }
+
+        private void buttonAddCountry_Click(object sender, EventArgs e)
+        {
+            Country.InsertCountry(textBoxAddCountry.Text);
         }
     }
 }

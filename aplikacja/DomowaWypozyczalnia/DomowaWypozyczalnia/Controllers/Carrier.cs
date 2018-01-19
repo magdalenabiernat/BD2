@@ -21,5 +21,9 @@ namespace DomowaWypozyczalnia
             Database.Current.Carriers.InsertOnSubmit(carrier);
             Database.Submit();
         }
+        internal static void EditCarrier(string name)
+        {
+           
+        }
     }
 }

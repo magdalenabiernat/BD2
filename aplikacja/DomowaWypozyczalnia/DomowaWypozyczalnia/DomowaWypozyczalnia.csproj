@@ -128,6 +128,9 @@
     <None Include="Model\DataClassesWypozyczalnia.dbml.layout">
       <DependentUpon>DataClassesWypozyczalnia.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Views\SinglePropertyForms\AddCarrier.resx">
+      <DependentUpon>AddCarrier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SinglePropertyForms\AddCountry.resx">
       <DependentUpon>AddCountry.cs</DependentUpon>
     </EmbeddedResource>
