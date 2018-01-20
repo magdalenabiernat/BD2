@@ -31,30 +31,30 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.plikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zamknijToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.użytkownikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.zmieńDaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pomocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelAdmin = new System.Windows.Forms.Panel();
+            this.buttonRoles = new System.Windows.Forms.Button();
+            this.buttonContries = new System.Windows.Forms.Button();
+            this.buttonCast = new System.Windows.Forms.Button();
+            this.buttonAHires = new System.Windows.Forms.Button();
+            this.buttonProductionCountry = new System.Windows.Forms.Button();
+            this.buttonLocations = new System.Windows.Forms.Button();
+            this.buttonLocationTypes = new System.Windows.Forms.Button();
+            this.buttonAFilms = new System.Windows.Forms.Button();
+            this.buttonGenres = new System.Windows.Forms.Button();
+            this.buttonCarries = new System.Windows.Forms.Button();
+            this.buttonUsers = new System.Windows.Forms.Button();
+            this.buttonATitles = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.labelAdmin = new System.Windows.Forms.Label();
             this.panelUser = new System.Windows.Forms.Panel();
+            this.buttonWishList = new System.Windows.Forms.Button();
+            this.buttonUHires = new System.Windows.Forms.Button();
+            this.buttonUFilms = new System.Windows.Forms.Button();
+            this.buttonUTitles = new System.Windows.Forms.Button();
             this.labelUser = new System.Windows.Forms.Label();
-            this.użytkownikToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.zmieńDaneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button25 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panelAdmin.SuspendLayout();
             this.panelUser.SuspendLayout();
@@ -87,6 +87,20 @@
             this.zamknijToolStripMenuItem.Text = "Zamknij";
             this.zamknijToolStripMenuItem.Click += new System.EventHandler(this.zamknijToolStripMenuItem_Click);
             // 
+            // użytkownikToolStripMenuItem
+            // 
+            this.użytkownikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.zmieńDaneToolStripMenuItem});
+            this.użytkownikToolStripMenuItem.Name = "użytkownikToolStripMenuItem";
+            this.użytkownikToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.użytkownikToolStripMenuItem.Text = "Użytkownik";
+            // 
+            // zmieńDaneToolStripMenuItem
+            // 
+            this.zmieńDaneToolStripMenuItem.Name = "zmieńDaneToolStripMenuItem";
+            this.zmieńDaneToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.zmieńDaneToolStripMenuItem.Text = "Zmień dane logowania";
+            // 
             // pomocToolStripMenuItem
             // 
             this.pomocToolStripMenuItem.Name = "pomocToolStripMenuItem";
@@ -95,18 +109,18 @@
             // 
             // panelAdmin
             // 
-            this.panelAdmin.Controls.Add(this.button13);
-            this.panelAdmin.Controls.Add(this.button12);
-            this.panelAdmin.Controls.Add(this.button11);
-            this.panelAdmin.Controls.Add(this.button10);
-            this.panelAdmin.Controls.Add(this.button9);
-            this.panelAdmin.Controls.Add(this.button8);
-            this.panelAdmin.Controls.Add(this.button7);
-            this.panelAdmin.Controls.Add(this.button6);
-            this.panelAdmin.Controls.Add(this.button5);
-            this.panelAdmin.Controls.Add(this.button4);
-            this.panelAdmin.Controls.Add(this.button3);
-            this.panelAdmin.Controls.Add(this.button2);
+            this.panelAdmin.Controls.Add(this.buttonRoles);
+            this.panelAdmin.Controls.Add(this.buttonContries);
+            this.panelAdmin.Controls.Add(this.buttonCast);
+            this.panelAdmin.Controls.Add(this.buttonAHires);
+            this.panelAdmin.Controls.Add(this.buttonProductionCountry);
+            this.panelAdmin.Controls.Add(this.buttonLocations);
+            this.panelAdmin.Controls.Add(this.buttonLocationTypes);
+            this.panelAdmin.Controls.Add(this.buttonAFilms);
+            this.panelAdmin.Controls.Add(this.buttonGenres);
+            this.panelAdmin.Controls.Add(this.buttonCarries);
+            this.panelAdmin.Controls.Add(this.buttonUsers);
+            this.panelAdmin.Controls.Add(this.buttonATitles);
             this.panelAdmin.Controls.Add(this.button1);
             this.panelAdmin.Controls.Add(this.labelAdmin);
             this.panelAdmin.Location = new System.Drawing.Point(12, 27);
@@ -114,6 +128,126 @@
             this.panelAdmin.Size = new System.Drawing.Size(641, 381);
             this.panelAdmin.TabIndex = 1;
             this.panelAdmin.Visible = false;
+            // 
+            // buttonRoles
+            // 
+            this.buttonRoles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRoles.Location = new System.Drawing.Point(412, 266);
+            this.buttonRoles.Name = "buttonRoles";
+            this.buttonRoles.Size = new System.Drawing.Size(172, 67);
+            this.buttonRoles.TabIndex = 27;
+            this.buttonRoles.Text = "Role";
+            this.buttonRoles.UseVisualStyleBackColor = true;
+            // 
+            // buttonContries
+            // 
+            this.buttonContries.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonContries.Location = new System.Drawing.Point(234, 266);
+            this.buttonContries.Name = "buttonContries";
+            this.buttonContries.Size = new System.Drawing.Size(172, 67);
+            this.buttonContries.TabIndex = 26;
+            this.buttonContries.Text = "Państwo";
+            this.buttonContries.UseVisualStyleBackColor = true;
+            // 
+            // buttonCast
+            // 
+            this.buttonCast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCast.Location = new System.Drawing.Point(56, 266);
+            this.buttonCast.Name = "buttonCast";
+            this.buttonCast.Size = new System.Drawing.Size(172, 67);
+            this.buttonCast.TabIndex = 25;
+            this.buttonCast.Text = "Obsada";
+            this.buttonCast.UseVisualStyleBackColor = true;
+            // 
+            // buttonAHires
+            // 
+            this.buttonAHires.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAHires.Location = new System.Drawing.Point(56, 193);
+            this.buttonAHires.Name = "buttonAHires";
+            this.buttonAHires.Size = new System.Drawing.Size(172, 67);
+            this.buttonAHires.TabIndex = 24;
+            this.buttonAHires.Text = "Wypożyczenia";
+            this.buttonAHires.UseVisualStyleBackColor = true;
+            // 
+            // buttonProductionCountry
+            // 
+            this.buttonProductionCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonProductionCountry.Location = new System.Drawing.Point(234, 193);
+            this.buttonProductionCountry.Name = "buttonProductionCountry";
+            this.buttonProductionCountry.Size = new System.Drawing.Size(172, 67);
+            this.buttonProductionCountry.TabIndex = 23;
+            this.buttonProductionCountry.Text = "Kraj produkcji";
+            this.buttonProductionCountry.UseVisualStyleBackColor = true;
+            // 
+            // buttonLocations
+            // 
+            this.buttonLocations.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonLocations.Location = new System.Drawing.Point(412, 193);
+            this.buttonLocations.Name = "buttonLocations";
+            this.buttonLocations.Size = new System.Drawing.Size(172, 67);
+            this.buttonLocations.TabIndex = 22;
+            this.buttonLocations.Text = "Lokalizacja";
+            this.buttonLocations.UseVisualStyleBackColor = true;
+            // 
+            // buttonLocationTypes
+            // 
+            this.buttonLocationTypes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonLocationTypes.Location = new System.Drawing.Point(412, 120);
+            this.buttonLocationTypes.Name = "buttonLocationTypes";
+            this.buttonLocationTypes.Size = new System.Drawing.Size(172, 67);
+            this.buttonLocationTypes.TabIndex = 21;
+            this.buttonLocationTypes.Text = "Typy lokalizacji";
+            this.buttonLocationTypes.UseVisualStyleBackColor = true;
+            // 
+            // buttonAFilms
+            // 
+            this.buttonAFilms.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonAFilms.Location = new System.Drawing.Point(234, 120);
+            this.buttonAFilms.Name = "buttonAFilms";
+            this.buttonAFilms.Size = new System.Drawing.Size(172, 67);
+            this.buttonAFilms.TabIndex = 20;
+            this.buttonAFilms.Text = "Filmy (egzemplarze)";
+            this.buttonAFilms.UseVisualStyleBackColor = true;
+            // 
+            // buttonGenres
+            // 
+            this.buttonGenres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonGenres.Location = new System.Drawing.Point(56, 120);
+            this.buttonGenres.Name = "buttonGenres";
+            this.buttonGenres.Size = new System.Drawing.Size(172, 67);
+            this.buttonGenres.TabIndex = 19;
+            this.buttonGenres.Text = "Gatunki";
+            this.buttonGenres.UseVisualStyleBackColor = true;
+            // 
+            // buttonCarries
+            // 
+            this.buttonCarries.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonCarries.Location = new System.Drawing.Point(412, 47);
+            this.buttonCarries.Name = "buttonCarries";
+            this.buttonCarries.Size = new System.Drawing.Size(172, 67);
+            this.buttonCarries.TabIndex = 18;
+            this.buttonCarries.Text = "Nośniki";
+            this.buttonCarries.UseVisualStyleBackColor = true;
+            // 
+            // buttonUsers
+            // 
+            this.buttonUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUsers.Location = new System.Drawing.Point(234, 47);
+            this.buttonUsers.Name = "buttonUsers";
+            this.buttonUsers.Size = new System.Drawing.Size(172, 67);
+            this.buttonUsers.TabIndex = 17;
+            this.buttonUsers.Text = "Użytkownicy";
+            this.buttonUsers.UseVisualStyleBackColor = true;
+            // 
+            // buttonATitles
+            // 
+            this.buttonATitles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonATitles.Location = new System.Drawing.Point(56, 47);
+            this.buttonATitles.Name = "buttonATitles";
+            this.buttonATitles.Size = new System.Drawing.Size(172, 67);
+            this.buttonATitles.TabIndex = 16;
+            this.buttonATitles.Text = "Tytuły filmów";
+            this.buttonATitles.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -138,16 +272,56 @@
             // 
             // panelUser
             // 
-            this.panelUser.Controls.Add(this.button14);
-            this.panelUser.Controls.Add(this.button17);
-            this.panelUser.Controls.Add(this.button21);
-            this.panelUser.Controls.Add(this.button25);
+            this.panelUser.Controls.Add(this.buttonWishList);
+            this.panelUser.Controls.Add(this.buttonUHires);
+            this.panelUser.Controls.Add(this.buttonUFilms);
+            this.panelUser.Controls.Add(this.buttonUTitles);
             this.panelUser.Controls.Add(this.labelUser);
             this.panelUser.Location = new System.Drawing.Point(12, 27);
             this.panelUser.Name = "panelUser";
             this.panelUser.Size = new System.Drawing.Size(641, 381);
             this.panelUser.TabIndex = 2;
             this.panelUser.Visible = false;
+            // 
+            // buttonWishList
+            // 
+            this.buttonWishList.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonWishList.Location = new System.Drawing.Point(323, 193);
+            this.buttonWishList.Name = "buttonWishList";
+            this.buttonWishList.Size = new System.Drawing.Size(172, 67);
+            this.buttonWishList.TabIndex = 31;
+            this.buttonWishList.Text = "Lista życzeń";
+            this.buttonWishList.UseVisualStyleBackColor = true;
+            // 
+            // buttonUHires
+            // 
+            this.buttonUHires.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUHires.Location = new System.Drawing.Point(145, 193);
+            this.buttonUHires.Name = "buttonUHires";
+            this.buttonUHires.Size = new System.Drawing.Size(172, 67);
+            this.buttonUHires.TabIndex = 30;
+            this.buttonUHires.Text = "Wypożyczenia";
+            this.buttonUHires.UseVisualStyleBackColor = true;
+            // 
+            // buttonUFilms
+            // 
+            this.buttonUFilms.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUFilms.Location = new System.Drawing.Point(323, 120);
+            this.buttonUFilms.Name = "buttonUFilms";
+            this.buttonUFilms.Size = new System.Drawing.Size(172, 67);
+            this.buttonUFilms.TabIndex = 29;
+            this.buttonUFilms.Text = "Filmy (egzemplarze)";
+            this.buttonUFilms.UseVisualStyleBackColor = true;
+            // 
+            // buttonUTitles
+            // 
+            this.buttonUTitles.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonUTitles.Location = new System.Drawing.Point(145, 120);
+            this.buttonUTitles.Name = "buttonUTitles";
+            this.buttonUTitles.Size = new System.Drawing.Size(172, 67);
+            this.buttonUTitles.TabIndex = 28;
+            this.buttonUTitles.Text = "Tytuły filmów";
+            this.buttonUTitles.UseVisualStyleBackColor = true;
             // 
             // labelUser
             // 
@@ -159,188 +333,14 @@
             this.labelUser.TabIndex = 0;
             this.labelUser.Text = "Użytkownik: ";
             // 
-            // użytkownikToolStripMenuItem
-            // 
-            this.użytkownikToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.zmieńDaneToolStripMenuItem});
-            this.użytkownikToolStripMenuItem.Name = "użytkownikToolStripMenuItem";
-            this.użytkownikToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.użytkownikToolStripMenuItem.Text = "Użytkownik";
-            // 
-            // button13
-            // 
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button13.Location = new System.Drawing.Point(412, 266);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(172, 67);
-            this.button13.TabIndex = 27;
-            this.button13.Text = "Role";
-            this.button13.UseVisualStyleBackColor = true;
-            // 
-            // button12
-            // 
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button12.Location = new System.Drawing.Point(234, 266);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(172, 67);
-            this.button12.TabIndex = 26;
-            this.button12.Text = "Państwo";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button11.Location = new System.Drawing.Point(56, 266);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(172, 67);
-            this.button11.TabIndex = 25;
-            this.button11.Text = "Obsada";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button10.Location = new System.Drawing.Point(56, 193);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(172, 67);
-            this.button10.TabIndex = 24;
-            this.button10.Text = "Wypożyczenia";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button9.Location = new System.Drawing.Point(234, 193);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(172, 67);
-            this.button9.TabIndex = 23;
-            this.button9.Text = "Kraj produkcji";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button8.Location = new System.Drawing.Point(412, 193);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(172, 67);
-            this.button8.TabIndex = 22;
-            this.button8.Text = "Lokalizacja";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button7.Location = new System.Drawing.Point(412, 120);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(172, 67);
-            this.button7.TabIndex = 21;
-            this.button7.Text = "Typy lokalizacji";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button6.Location = new System.Drawing.Point(234, 120);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(172, 67);
-            this.button6.TabIndex = 20;
-            this.button6.Text = "Filmy (egzemplarze)";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button5.Location = new System.Drawing.Point(56, 120);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(172, 67);
-            this.button5.TabIndex = 19;
-            this.button5.Text = "Gatunki";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(412, 47);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(172, 67);
-            this.button4.TabIndex = 18;
-            this.button4.Text = "Nośniki";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(234, 47);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(172, 67);
-            this.button3.TabIndex = 17;
-            this.button3.Text = "Użytkownicy";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(56, 47);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 67);
-            this.button2.TabIndex = 16;
-            this.button2.Text = "Tytuły filmów";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // zmieńDaneToolStripMenuItem
-            // 
-            this.zmieńDaneToolStripMenuItem.Name = "zmieńDaneToolStripMenuItem";
-            this.zmieńDaneToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.zmieńDaneToolStripMenuItem.Text = "Zmień dane logowania";
-            // 
-            // button14
-            // 
-            this.button14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button14.Location = new System.Drawing.Point(323, 193);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(172, 67);
-            this.button14.TabIndex = 31;
-            this.button14.Text = "Lista życzeń";
-            this.button14.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button17.Location = new System.Drawing.Point(145, 193);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(172, 67);
-            this.button17.TabIndex = 30;
-            this.button17.Text = "Wypożyczenia";
-            this.button17.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button21.Location = new System.Drawing.Point(323, 120);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(172, 67);
-            this.button21.TabIndex = 29;
-            this.button21.Text = "Filmy (egzemplarze)";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // button25
-            // 
-            this.button25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button25.Location = new System.Drawing.Point(145, 120);
-            this.button25.Name = "button25";
-            this.button25.Size = new System.Drawing.Size(172, 67);
-            this.button25.TabIndex = 28;
-            this.button25.Text = "Tytuły filmów";
-            this.button25.UseVisualStyleBackColor = true;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 420);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.panelAdmin);
             this.Controls.Add(this.panelUser);
+            this.Controls.Add(this.panelAdmin);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Domowa Wypożyczalnia";
@@ -368,21 +368,21 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem użytkownikToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem zmieńDaneToolStripMenuItem;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Button buttonRoles;
+        private System.Windows.Forms.Button buttonContries;
+        private System.Windows.Forms.Button buttonCast;
+        private System.Windows.Forms.Button buttonAHires;
+        private System.Windows.Forms.Button buttonProductionCountry;
+        private System.Windows.Forms.Button buttonLocations;
+        private System.Windows.Forms.Button buttonLocationTypes;
+        private System.Windows.Forms.Button buttonAFilms;
+        private System.Windows.Forms.Button buttonGenres;
+        private System.Windows.Forms.Button buttonCarries;
+        private System.Windows.Forms.Button buttonUsers;
+        private System.Windows.Forms.Button buttonATitles;
+        private System.Windows.Forms.Button buttonWishList;
+        private System.Windows.Forms.Button buttonUHires;
+        private System.Windows.Forms.Button buttonUFilms;
+        private System.Windows.Forms.Button buttonUTitles;
     }
 }
