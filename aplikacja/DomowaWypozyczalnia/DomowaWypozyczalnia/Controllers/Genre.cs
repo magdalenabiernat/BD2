@@ -19,5 +19,15 @@ namespace DomowaWypozyczalnia
             Database.Current.Genres.InsertOnSubmit(genre);
             Database.Submit();
         }
+
+        internal static List<Genre> GetAll()
+        {
+            return Database.Current.Genres.ToList();
+        }
+
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
 }

@@ -47,13 +47,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Cast.cs" />
     <Compile Include="Controllers\Cryptography\AesCryptography.cs" />
     <Compile Include="Controllers\Carrier.cs" />
+    <Compile Include="Controllers\Film.cs" />
     <Compile Include="Controllers\Genre.cs" />
+    <Compile Include="Controllers\Hire.cs" />
     <Compile Include="Controllers\Inmate.cs" />
+    <Compile Include="Controllers\Location.cs" />
     <Compile Include="Controllers\LocationType.cs" />
+    <Compile Include="Controllers\Person.cs" />
     <Compile Include="Controllers\ProductionCompany.cs" />
+    <Compile Include="Controllers\ProductionCountry.cs" />
     <Compile Include="Controllers\Role.cs" />
+    <Compile Include="Controllers\Specimen.cs" />
     <Compile Include="Views\SinglePropertyForms\AddCountry.cs">
       <SubType>Form</SubType>
     </Compile>

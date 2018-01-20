@@ -15,6 +15,9 @@ namespace DomowaWypozyczalnia
             if (user == null)
                 return Result.InvalidInput;
 
+            if (user.Active == false)
+                return Result.InvalidInput;
+
             if (user.HashedPassword == AesCryptography.EncryptString(password))
                 return Result.Ok;
             else

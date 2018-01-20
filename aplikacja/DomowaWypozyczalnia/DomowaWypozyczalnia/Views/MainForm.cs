@@ -26,9 +26,15 @@ namespace DomowaWypozyczalnia
         private void SwitchPanel()
         {
             if (isAdmin)
+            {
                 panelAdmin.Visible = true;
+                SetAdminPanel();
+            }
             else
-                panelUser.Visible = true;    
+            {
+                panelUser.Visible = true;
+                SetUserPanel();
+            }
         }
 
         private void zamknijToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,6 +46,16 @@ namespace DomowaWypozyczalnia
         {
             AddGenre ag = new AddGenre();
             ag.Show();
+        }
+
+        private void SetAdminPanel()
+        {
+            labelAdmin.Text += user.Inmate1.Name;
+        }
+
+        private void SetUserPanel()
+        {
+            labelUser.Text += user.Inmate1.Name;
         }
     }
 }
