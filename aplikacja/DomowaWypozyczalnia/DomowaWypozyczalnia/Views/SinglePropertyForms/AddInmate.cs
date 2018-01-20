@@ -52,5 +52,10 @@ namespace DomowaWypozyczalnia
             else
                 return Result.EmptyImput;
         }
+
+        private void buttonAddInmate_Click(object sender, EventArgs e)
+        {
+            Inmate.InsertInmate(textBoxAddInmate.Text);
+        }
     }
 }

@@ -52,5 +52,10 @@ namespace DomowaWypozyczalnia
             else
                 return Result.EmptyImput;
         }
+
+        private void buttonAddGenre_Click(object sender, EventArgs e)
+        {
+            Genre.InsertGenre(textBoxAddGenre.Text);
+        }
     }
 }
