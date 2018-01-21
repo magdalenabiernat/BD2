@@ -21,5 +21,10 @@ namespace DomowaWypozyczalnia
             Database.Current.ProductionCompanies.InsertOnSubmit(company);
             Database.Submit();
         }
+
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
 }

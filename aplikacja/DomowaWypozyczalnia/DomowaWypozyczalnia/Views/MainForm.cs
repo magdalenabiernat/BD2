@@ -57,5 +57,11 @@ namespace DomowaWypozyczalnia
         {
             labelUser.Text += user.Inmate1.Name;
         }
+
+        private void buttonATitles_Click(object sender, EventArgs e)
+        {
+            ShowTitles title = new ShowTitles();
+            title.ShowDialog();
+        }
     }
 }

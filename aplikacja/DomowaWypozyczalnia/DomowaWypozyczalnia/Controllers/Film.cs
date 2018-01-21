@@ -8,5 +8,9 @@ namespace DomowaWypozyczalnia
 {
     partial class Film
     {
+        internal static List<Film> GetAll()
+        {
+            return Database.Current.Films.ToList();
+        }
     }
 }

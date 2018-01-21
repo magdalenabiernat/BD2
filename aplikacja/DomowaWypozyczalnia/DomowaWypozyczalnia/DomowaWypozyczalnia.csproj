@@ -61,6 +61,12 @@
     <Compile Include="Controllers\ProductionCountry.cs" />
     <Compile Include="Controllers\Role.cs" />
     <Compile Include="Controllers\Specimen.cs" />
+    <Compile Include="Views\ShowTitles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShowTitles.Designer.cs">
+      <DependentUpon>ShowTitles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SinglePropertyForms\AddCountry.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,9 @@
     <None Include="Model\DataClassesWypozyczalnia.dbml.layout">
       <DependentUpon>DataClassesWypozyczalnia.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Views\ShowTitles.resx">
+      <DependentUpon>ShowTitles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SinglePropertyForms\AddCountry.resx">
       <DependentUpon>AddCountry.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,6 +170,7 @@
       <LastGenOutput>DataClassesWypozyczalnia.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\Film.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

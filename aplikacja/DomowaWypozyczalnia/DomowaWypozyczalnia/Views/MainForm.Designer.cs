@@ -248,6 +248,7 @@
             this.buttonATitles.TabIndex = 16;
             this.buttonATitles.Text = "Tytuły filmów";
             this.buttonATitles.UseVisualStyleBackColor = true;
+            this.buttonATitles.Click += new System.EventHandler(this.buttonATitles_Click);
             // 
             // button1
             // 
@@ -339,8 +340,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(665, 420);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.panelUser);
             this.Controls.Add(this.panelAdmin);
+            this.Controls.Add(this.panelUser);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Domowa Wypożyczalnia";
