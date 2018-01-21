@@ -16,5 +16,10 @@ namespace DomowaWypozyczalnia.Views
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView.DataSource = User.GetAll();
+        }
     }
 }
