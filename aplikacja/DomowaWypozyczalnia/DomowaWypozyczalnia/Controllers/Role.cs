@@ -21,5 +21,10 @@ namespace DomowaWypozyczalnia
             Database.Current.Roles.InsertOnSubmit(role);
             Database.Submit();
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

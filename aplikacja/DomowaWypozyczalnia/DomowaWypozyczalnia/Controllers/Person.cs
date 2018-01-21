@@ -8,5 +8,9 @@ namespace DomowaWypozyczalnia
 {
     partial class Person
     {
+        public override string ToString()
+        {
+            return Name + " " + Surname;
+        }
     }
 }

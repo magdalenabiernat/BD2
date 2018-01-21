@@ -8,5 +8,6 @@ namespace DomowaWypozyczalnia
 {
     partial class Cast
     {
+
     }
 }

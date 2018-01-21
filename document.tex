@@ -264,6 +264,23 @@ Jeśli chodzi o poszczególne opcje dostępne w programie:
 \item Państwo - opcja dostępna u administratora. Umożliwia wyświetlenie, dodanie, edycję i usunięcie państwa z bazy danych.
 \item Role - opcja dostępna u administratora. Umożliwia wyświetlenie, dodanie, edycję i usunięcie możliwych ról w filmach.
 \end{itemize}
+\subsection{Tytuły filmów}
+Okno posiada dwa komponenty typu \textit{dataGridView}, umieszczonych w różnych groupBoxach. W pierwszym, znajdziemy wszystkie filmy z naszej bazy danych w kolejności chronologicznej jeśli chodzi o ich dodanie. W zależności od zaznaczonego wiersza, w polach obok będą się zmieniać dane. W drugim komponencie ukażą się nam aktorzy grający w danym filmie, oczywiście jeśli tacy występują. Podobnie tutaj po prawej stronie mamy pola, które będą nam pokazywać parametry danej postaci z filmu. Dodatkowo, mamy możliwość dodania nowego filmu, a także nowego aktora do filmu, aktualnie widnieje w zaznaczeniu. Administrator może wyedytować zaznaczoną postać i dany film oraz je usunąć. W przypadku usunięcia filmu szukamy, czy dany film nie posiada powiązań z innym rekordem. Jeśli nie ma ich, możemy śmiało usuwać rekord.
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=12.5cm]{tytuly.PNG}
+\caption{Stworzone okno z tytułami filmów}
+\end{figure}
 \section{Testy aplikacji}
+Testy przeprowadziliśmy na bazie oraz w aplikacji. Polegały one na tym, że wpisywaliśmy wybrane dane.
+W bazie danych wyjątki były wyrzucane, kiedy były zostawione puste pola w miejscach, gdzie było zaznaczone "not null" oraz kiedy w miejsce integerów były wpisywane wyrazy. 
+W aplikacji testy wyglądały podobnie, tylko że wszystkie te wyjątki zostały wyłapane, a użytkownik został poinformowany, że należy zmienić format tekstu lub że nie może zostawić pustego pola.
 \section{Podsumowanie}
+Nasz projekt był czasochłonny. Należało najpierw przemyśleć, co chcemy zrobić, potem wykonać diagramy, zaprojektować bazę danych, napisać aplikację oraz sprawdzić, czy metody zostały poprawnie zaimplementowane.
+	Mogliśmy się nauczyć, jak wygląda tworzenie aplikacji oraz co potrzebujemy do jej wykonania.
+	Wartościowe było poznanie możliwości haszowania haseł oraz podejrzenia danych w Wiresharku, jaki to ma skutek.
+	Do pozytywnych rzeczy możemy także zaliczyć stawianie bazy danych na maszynie wirtualnej.
+	Mamy nadzieję, że trudności na jakie się natchnęliśmy oraz zdobyta wiedza pomogą nam w przyszłości na tworzenie lepszych projektów. 
+	
+	Nie zamieszczamy żadnej literatury i źródeł, ponieważ z nich nie korzystaliśmy. Nasz projekt powstał na bazie wiedzy nabytej podczas toku studiów oraz w czasie pracy.
 \end{document}
