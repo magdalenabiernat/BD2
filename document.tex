@@ -272,6 +272,11 @@ Okno posiada dwa komponenty typu \textit{dataGridView}, umieszczonych w różnyc
 \caption{Stworzone okno z tytułami filmów}
 \end{figure}
 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=8cm]{3a.PNG}
+\caption{Dodawanie aktora}
+\end{figure}
 Podobnym oknem będzie lista życzeń. W tym przypadku nie będziemy mieć opcji edycji i usuwania. W stosunku do okna tytułów filmów różni się tym, że w zapytaniu są zwracane te rekordy, które posiadają powiązanie z tabelą \textit{Specimen}.
 \subsection{Użytkownicy}
 Okno jest tylko do dyspozycji administratora. Można obejrzeć w nim wszystkich użytkowników, dodać nowych, edytować i oznaczać jako nieaktywnych bądź aktywnych. Okno posiada również opcję filtrowania. Jeśli chcemy zobaczyć tylko użytkowników aktywnych, zaznaczamy kontrolkę checkBox i odświeża nam się widok. W przypadku oznaczania jako nieaktywny - okno posiada blokadę, ażeby jednocześnie istniał co najmniej jeden aktywny administrator.
@@ -287,6 +292,7 @@ Okno jest tylko do dyspozycji administratora. Można obejrzeć w nim wszystkich 
   \end{subfigure}
   \caption{Okno Użytkownicy}
 \end{figure}
+\newpage
 \subsection{SingleProperty}
 Są to okna, w których edytujemy, dodajemy tylko jedną właściwość. Będą się tyczyć tabel tj. Carrier (Nośnik), Genre (Gatunek), LocationType (Typ lokalizacji), Country (Państwo) czy Role (Rola). Mamy w nich do dyspozycji komponent dataGridView z pojedynczym polem. 
 \begin{figure}[!ht]
@@ -302,7 +308,7 @@ Mamy opcję dodania pojedynczej właściwości lub jej edycji. W przypadku tworz
 \end{figure}
 
 W przypadku gry będzie chodziło nam o edycję, odpowiednio okno będzie miało zmienioną nazwę (tutaj Edytuj nośnik X) oraz zmieniony napis na przycisku, natomiast w textBoxie ukaże się nam właściwość do wyedytowania. Okno posiada również blokadę, ażeby nie wpisać dwóch tych samych nazw do tabel; dzieje się tak zarówno w przypadku dodawania jak i edycji.
-\newpage
+
 \subsection{Filmy (egzemplarze)}
 Kolejnym oknem będą filmy, które są aktywne (istnieją aktywne egzemplarze tytułów). W przypadku gdy dany film jest wypożyczony, przycisk "Wypożycz" jest nieaktywny. Ponadto jest możliwość dodania kolejnych egzemplarzy, a w przypadku administratora; jest możliwość edycji i oznaczania filmów jako nieaktywne. Z założenia, filmu nieaktywnego nie da się przywrócić, należy wtedy dodać nowy. 
 \begin{figure}[!ht]
