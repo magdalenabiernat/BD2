@@ -19,5 +19,10 @@ namespace DomowaWypozyczalnia
             Database.Current.Inmates.InsertOnSubmit(inmate);
             Database.Submit();
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

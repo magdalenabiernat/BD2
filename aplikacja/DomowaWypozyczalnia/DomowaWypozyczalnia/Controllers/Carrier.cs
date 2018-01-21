@@ -21,5 +21,15 @@ namespace DomowaWypozyczalnia
             Database.Current.Carriers.InsertOnSubmit(carrier);
             Database.Submit();
         }
+
+        internal static List<Carrier> GetAll()
+        {
+            return Database.Current.Carriers.ToList();
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

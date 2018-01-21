@@ -265,11 +265,64 @@ Jeśli chodzi o poszczególne opcje dostępne w programie:
 \item Role - opcja dostępna u administratora. Umożliwia wyświetlenie, dodanie, edycję i usunięcie możliwych ról w filmach.
 \end{itemize}
 \subsection{Tytuły filmów}
-Okno posiada dwa komponenty typu \textit{dataGridView}, umieszczonych w różnych groupBoxach. W pierwszym, znajdziemy wszystkie filmy z naszej bazy danych w kolejności chronologicznej jeśli chodzi o ich dodanie. W zależności od zaznaczonego wiersza, w polach obok będą się zmieniać dane. W drugim komponencie ukażą się nam aktorzy grający w danym filmie, oczywiście jeśli tacy występują. Podobnie tutaj po prawej stronie mamy pola, które będą nam pokazywać parametry danej postaci z filmu. Dodatkowo, mamy możliwość dodania nowego filmu, a także nowego aktora do filmu, aktualnie widnieje w zaznaczeniu. Administrator może wyedytować zaznaczoną postać i dany film oraz je usunąć. W przypadku usunięcia filmu szukamy, czy dany film nie posiada powiązań z innym rekordem. Jeśli nie ma ich, możemy śmiało usuwać rekord.
+Okno posiada dwa komponenty typu \textit{dataGridView}, umieszczonych w różnych groupBoxach. W pierwszym, znajdziemy wszystkie filmy z naszej bazy danych w kolejności chronologicznej jeśli chodzi o ich dodanie. W zależności od zaznaczonego wiersza, w polach obok będą się zmieniać dane. W drugim komponencie ukażą się nam aktorzy grający w danym filmie, oczywiście jeśli tacy występują. Podobnie tutaj po prawej stronie mamy pola, które będą nam pokazywać parametry danej postaci z filmu. Dodatkowo, mamy możliwość dodania nowego filmu, a także nowego aktora do filmu, aktualnie widnieje w zaznaczeniu. Administrator może wyedytować zaznaczoną postać i dany film oraz je usunąć. W przypadku usunięcia filmu szukamy, czy dany film nie posiada powiązań z innym rekordem. Jeśli nie ma ich, możemy śmiało usuwać rekord. 
 \begin{figure}[!ht]
 \centering
 \includegraphics[width=12.5cm]{tytuly.PNG}
 \caption{Stworzone okno z tytułami filmów}
+\end{figure}
+
+Podobnym oknem będzie lista życzeń. W tym przypadku nie będziemy mieć opcji edycji i usuwania. W stosunku do okna tytułów filmów różni się tym, że w zapytaniu są zwracane te rekordy, które posiadają powiązanie z tabelą \textit{Specimen}.
+\subsection{Użytkownicy}
+Okno jest tylko do dyspozycji administratora. Można obejrzeć w nim wszystkich użytkowników, dodać nowych, edytować i oznaczać jako nieaktywnych bądź aktywnych. Okno posiada również opcję filtrowania. Jeśli chcemy zobaczyć tylko użytkowników aktywnych, zaznaczamy kontrolkę checkBox i odświeża nam się widok. W przypadku oznaczania jako nieaktywny - okno posiada blokadę, ażeby jednocześnie istniał co najmniej jeden aktywny administrator.
+\begin{figure}[!ht]
+\centering
+  \begin{subfigure}[b]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{users.PNG}
+  \caption{Wszyscy użytkownicy}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{active.PNG}
+  \caption{Aktywni użytkownicy}
+  \end{subfigure}
+  \caption{Okno Użytkownicy}
+\end{figure}
+\subsection{SingleProperty}
+Są to okna, w których edytujemy, dodajemy tylko jedną właściwość. Będą się tyczyć tabel tj. Carrier (Nośnik), Genre (Gatunek), LocationType (Typ lokalizacji), Country (Państwo) czy Role (Rola). Mamy w nich do dyspozycji komponent dataGridView z pojedynczym polem. 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=4cm]{carrier.PNG}
+\caption{Stworzone okno dla pojedynczych pól. Tutaj Nośniki}
+\end{figure}
+Mamy opcję dodania pojedynczej właściwości lub jej edycji. W przypadku tworzenia nowego, wyskoczy nam okno, które będzie dziedziczyć po klasie \textit{AddSingleProperty}, która jest oknem bazowym dla wszystkich tabel wymienionych wcześniej. 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=8cm]{addcarrier.PNG}
+\caption{Okno dodawania nośnika}
+\end{figure}
+
+W przypadku gry będzie chodziło nam o edycję, odpowiednio okno będzie miało zmienioną nazwę (tutaj Edytuj nośnik X) oraz zmieniony napis na przycisku, natomiast w textBoxie ukaże się nam właściwość do wyedytowania. Okno posiada również blokadę, ażeby nie wpisać dwóch tych samych nazw do tabel; dzieje się tak zarówno w przypadku dodawania jak i edycji.
+\newpage
+\subsection{Filmy (egzemplarze)}
+Kolejnym oknem będą filmy, które są aktywne (istnieją aktywne egzemplarze tytułów). W przypadku gdy dany film jest wypożyczony, przycisk "Wypożycz" jest nieaktywny. Ponadto jest możliwość dodania kolejnych egzemplarzy, a w przypadku administratora; jest możliwość edycji i oznaczania filmów jako nieaktywne. Z założenia, filmu nieaktywnego nie da się przywrócić, należy wtedy dodać nowy. 
+\begin{figure}[!ht]
+\centering
+  \begin{subfigure}[b]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{films.PNG}
+  \caption{Filmy}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.45\textwidth}
+  \includegraphics[width=\textwidth]{borrowed.PNG}
+  \caption{Wypożyczony film}
+  \end{subfigure}
+  \caption{Okno Filmy}
+\end{figure}
+\subsection{Wypożyczenia}
+Ostatnim oknem opisywanym w tym dokumencie są wypożyczenia. Po raz kolejny mamy tutaj komponent dataGridView, który zawiera podstawowe dane nt. pożyczonej pozycji. Dla zwykłego użytkownika pojawiają się pozycje, które zostały przez niego wypożyczone - nie widzi on pozycji wypożyczonych przez innych lokatorów. Poniżej grida mamy również przycisk "Zwróć", który odpowiada za usunięcie wskazanego rekordu z tabeli \textit{Hires}. Administrator ma również komponent typu comboBox, z którego może wybrać użytkownika i administracyjnie zwrócić jego wypożyczenia (również swoje). 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=14cm]{hires.PNG}
+\caption{Okno wypożyczeń z poziomu panelu administratora}
 \end{figure}
 \section{Testy aplikacji}
 Testy przeprowadziliśmy na bazie oraz w aplikacji. Polegały one na tym, że wpisywaliśmy wybrane dane.

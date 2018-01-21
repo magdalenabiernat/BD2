@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DomowaWypozyczalnia.Views;
 
 namespace DomowaWypozyczalnia
 {
@@ -62,6 +63,30 @@ namespace DomowaWypozyczalnia
         {
             ShowTitles title = new ShowTitles();
             title.ShowDialog();
+        }
+
+        private void buttonUsers_Click(object sender, EventArgs e)
+        {
+            ShowUsers u = new ShowUsers();
+            u.ShowDialog();
+        }
+
+        private void buttonCarries_Click(object sender, EventArgs e)
+        {
+            Carriers c = new Carriers();
+            c.ShowDialog();
+        }
+
+        private void buttonAFilms_Click(object sender, EventArgs e)
+        {
+            Films f = new Films();
+            f.ShowDialog();
+        }
+
+        private void buttonAHires_Click(object sender, EventArgs e)
+        {
+            Hires h = new Hires();
+            h.ShowDialog();
         }
     }
 }

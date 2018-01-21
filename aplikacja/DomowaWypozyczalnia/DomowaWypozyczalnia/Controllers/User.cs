@@ -42,5 +42,20 @@ namespace DomowaWypozyczalnia
                 Database.Submit();
             }     
         }
+
+        internal static List<User> GetAll()
+        {
+            return Database.Current.Users.ToList();
+        }
+
+        internal static List<User> GetActives()
+        {
+            return Database.Current.Users.Where(u => u.Active == true).ToList();
+        }
+
+        public override string ToString()
+        {
+            return Login + $" ({Inmate1.Name})";
+        }
     }
 }

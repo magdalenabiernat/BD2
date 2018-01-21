@@ -17,5 +17,10 @@ namespace DomowaWypozyczalnia
         {
             return Database.Current.Films.Where(f => f.Id == id).FirstOrDefault();
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

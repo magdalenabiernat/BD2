@@ -8,5 +8,9 @@ namespace DomowaWypozyczalnia
 {
     partial class Hire
     {
+        internal static List<Hire> GetAll()
+        {
+            return Database.Current.Hires.Where(h => h.Returned == false).ToList();
+        }
     }
 }

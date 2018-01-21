@@ -8,5 +8,9 @@ namespace DomowaWypozyczalnia
 {
     partial class Location
     {
+        public override string ToString()
+        {
+            return LocationType1.Name + ": " + Place;
+        }
     }
 }

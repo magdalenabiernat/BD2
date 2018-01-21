@@ -8,5 +8,14 @@ namespace DomowaWypozyczalnia
 {
     partial class Specimen
     {
+        internal static List<Specimen> GetActive()
+        {
+            return Database.Current.Specimens.Where(s => s.Active == true).ToList();
+        }
+
+        public override string ToString()
+        {
+            return Film1.Name + $" ({Carrier1.Name})";
+        }
     }
 }

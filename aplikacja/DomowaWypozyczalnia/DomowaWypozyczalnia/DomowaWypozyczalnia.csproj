@@ -61,11 +61,35 @@
     <Compile Include="Controllers\ProductionCountry.cs" />
     <Compile Include="Controllers\Role.cs" />
     <Compile Include="Controllers\Specimen.cs" />
+    <Compile Include="Views\Carriers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Carriers.Designer.cs">
+      <DependentUpon>Carriers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Films.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Films.Designer.cs">
+      <DependentUpon>Films.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Hires.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Hires.Designer.cs">
+      <DependentUpon>Hires.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\ShowTitles.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\ShowTitles.Designer.cs">
       <DependentUpon>ShowTitles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShowUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShowUsers.Designer.cs">
+      <DependentUpon>ShowUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SinglePropertyForms\AddCountry.cs">
       <SubType>Form</SubType>
@@ -141,8 +165,20 @@
     <None Include="Model\DataClassesWypozyczalnia.dbml.layout">
       <DependentUpon>DataClassesWypozyczalnia.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Views\Carriers.resx">
+      <DependentUpon>Carriers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Films.resx">
+      <DependentUpon>Films.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Hires.resx">
+      <DependentUpon>Hires.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\ShowTitles.resx">
       <DependentUpon>ShowTitles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ShowUsers.resx">
+      <DependentUpon>ShowUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SinglePropertyForms\AddCountry.resx">
       <DependentUpon>AddCountry.cs</DependentUpon>
@@ -170,8 +206,12 @@
       <LastGenOutput>DataClassesWypozyczalnia.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\DataSources\Carrier.datasource" />
     <None Include="Properties\DataSources\Cast.datasource" />
     <None Include="Properties\DataSources\Film.datasource" />
+    <None Include="Properties\DataSources\Hire.datasource" />
+    <None Include="Properties\DataSources\Specimen.datasource" />
+    <None Include="Properties\DataSources\User.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

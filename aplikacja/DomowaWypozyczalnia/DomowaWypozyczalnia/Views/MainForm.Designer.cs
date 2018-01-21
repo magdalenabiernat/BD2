@@ -168,6 +168,7 @@
             this.buttonAHires.TabIndex = 24;
             this.buttonAHires.Text = "Wypożyczenia";
             this.buttonAHires.UseVisualStyleBackColor = true;
+            this.buttonAHires.Click += new System.EventHandler(this.buttonAHires_Click);
             // 
             // buttonProductionCountry
             // 
@@ -208,6 +209,7 @@
             this.buttonAFilms.TabIndex = 20;
             this.buttonAFilms.Text = "Filmy (egzemplarze)";
             this.buttonAFilms.UseVisualStyleBackColor = true;
+            this.buttonAFilms.Click += new System.EventHandler(this.buttonAFilms_Click);
             // 
             // buttonGenres
             // 
@@ -228,6 +230,7 @@
             this.buttonCarries.TabIndex = 18;
             this.buttonCarries.Text = "Nośniki";
             this.buttonCarries.UseVisualStyleBackColor = true;
+            this.buttonCarries.Click += new System.EventHandler(this.buttonCarries_Click);
             // 
             // buttonUsers
             // 
@@ -238,6 +241,7 @@
             this.buttonUsers.TabIndex = 17;
             this.buttonUsers.Text = "Użytkownicy";
             this.buttonUsers.UseVisualStyleBackColor = true;
+            this.buttonUsers.Click += new System.EventHandler(this.buttonUsers_Click);
             // 
             // buttonATitles
             // 
