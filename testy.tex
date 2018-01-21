@@ -1,0 +1,30 @@
+% !TEX encoding = UTF-8 Unicode
+\documentclass{article}
+
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3.5cm, bottom=2.5cm, headsep=2.5cm]{geometry}
+
+\linespread{1.3}
+\begin{document}
+	\section{Testy}
+
+	Ponieważ projekt był tworzony w Visual Studio, to również testy wykonaliśmy w tym środowisku.
+	
+	Najpierw należało utworzył nowy projekt, wybrać z listy szablonów „Projekt testu jednostki”, podać nazwę, a następnie dodać odwołanie z menu kontekstowego. W taki sposób powstała nowa klasa, która posłużyła nam do testów.
+	
+	Metoda testu musi spełniać następujące wymagania:
+	\begin{itemize}
+	\item 	Metodzie musi zostać nadany atrybut [TestMethod] .
+	\item 	Metoda musi zwracać void.
+	\item	Metoda nie może mieć parametrów.
+	\end{itemize}
+	
+	Jeżeli w trakcie testów metoda zgłosi nam wyjątek inny, niż ten który podaliśmy, test kończy się wynikiem negatywnym.
+	Ważne też jest pisanie testów. Testy jednostkowe powinny być atomowe, tzn. dotyczyć jednego przypadku użycia.
+	Testy służą wyłapywaniu wyjątków. W naszym programie wyjątki mogły się pojawić, gdyby ktoś wpisał dane w niepoprawnym formacie.
+	
+\end{document}
